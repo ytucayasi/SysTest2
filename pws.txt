@@ -1,0 +1,15 @@
+Token github
+
+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
+
+Real:
+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
+
+#Permisos para acceso a DB
+GRANT ALL PRIVILEGES ON * . * TO 'root'@'%';
+
+
+gitLab
+glpat-siA3p8ZKGWysi13tAwRc
+
+
