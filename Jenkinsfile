@@ -9,21 +9,21 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                timeout(time: 2, unit: 'MINUTES'){
-                    git branch: 'main', credentialsId: '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', url: 'https://github.com/dmamanipar/SysEventos2023.git'
+                timeout(time: 4, unit: 'MINUTES'){
+                    git branch: 'main', credentialsId: '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', url: 'https://github.com/ytucayasi/SysTest2.git'
                 }
             }
         }
         stage('Build') {
             steps {
-                timeout(time: 4, unit: 'MINUTES'){
+                timeout(time: 8, unit: 'MINUTES'){
                     sh "mvn -DskipTests clean package -f SysAsistenciaAn/pom.xml"
                 }
             }
         }
         stage('Test') {
             steps {
-                timeout(time: 4, unit: 'MINUTES'){
+                timeout(time: 8, unit: 'MINUTES'){
                     // Se cambia <test> por <install> para que se genere el reporte de jacoco
                     sh "mvn clean install -f SysAsistenciaAn/pom.xml"
                 }
